@@ -1,6 +1,6 @@
 # dotfiles
 
-My Linux config: bash, git, Ghostty, Oh My Posh (takuya theme), and Claude Code settings.
+My Linux config: a crimson Hyprland rice (bar, launcher, lock screen, terminal) plus bash, git, Oh My Posh and Claude Code settings. Colours are pulled from the wallpaper wallhaven-mlye38.
 
 ## Setup on a new machine
 
@@ -22,7 +22,7 @@ Move it into `~/dotfiles` at the same path relative to `$HOME`, add that path to
 
 Secrets and machine state stay out of the repo: `~/.claude/.credentials.json`, `~/.claude.json`, Claude history/projects, `~/.ssh`, `~/.gnupg`, `~/.config/gh`.
 
-## Hyprland rice (Catppuccin Mocha)
+## Hyprland rice (Crimson)
 
 Configs: `.config/hypr`, `waybar`, `rofi`, `mako`, `fastfetch`. Tested on Hyprland 0.53 (Ubuntu 26.04).
 

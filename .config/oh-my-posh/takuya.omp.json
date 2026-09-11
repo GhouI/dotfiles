@@ -5,7 +5,7 @@
       "alignment": "left",
       "segments": [
         {
-          "background": "#0077c2",
+          "background": "#9a0001",
           "foreground": "#ffffff",
           "leading_diamond": "\u256d\u2500\ue0b6",
           "style": "diamond",
@@ -13,8 +13,8 @@
           "type": "shell"
         },
         {
-          "background": "#ef5350",
-          "foreground": "#FFFB38",
+          "background": "#e3122e",
+          "foreground": "#f21956",
           "options": {
             "root_icon": "\uf292"
           },
@@ -23,8 +23,8 @@
           "type": "root"
         },
         {
-          "background": "#444444",
-          "foreground": "#E4E4E4",
+          "background": "#1d0a0c",
+          "foreground": "#f4dfe1",
           "powerline_symbol": "\ue0b0",
           "options": {
             "style": "full"
@@ -34,20 +34,20 @@
           "type": "path"
         },
         {
-          "background": "#FFFB38",
+          "background": "#f21956",
           "background_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}#ffeb95{{ end }}",
-            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#c5e478{{ end }}",
-            "{{ if gt .Ahead 0 }}#C792EA{{ end }}",
-            "{{ if gt .Behind 0 }}#C792EA{{ end }}"
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#ffb4a2{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ff8fa3{{ end }}",
+            "{{ if gt .Ahead 0 }}#ff6b8b{{ end }}",
+            "{{ if gt .Behind 0 }}#ff6b8b{{ end }}"
           ],
-          "foreground": "#011627",
+          "foreground": "#060000",
           "powerline_symbol": "\ue0b0",
           "options": {
             "branch_icon": "\ue725 "
           },
           "style": "powerline",
-          "template": " {{ .HEAD }} {{ if .Working.Changed }}{{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#ef5350> \uf046 {{ .Staging.String }}</>{{ end }} ",
+          "template": " {{ .HEAD }} {{ if .Working.Changed }}{{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#e3122e> \uf046 {{ .Staging.String }}</>{{ end }} ",
           "type": "git"
         }
       ],
@@ -57,13 +57,13 @@
       "alignment": "right",
       "segments": [
         {
-          "background": "#303030",
+          "background": "#1d0a0c",
           "foreground": "#3C873A",
           "leading_diamond": " \ue0b6",
           "options": {
             "fetch_package_manager": true,
             "npm_icon": " <#cc3a3a>\ue5fa</> ",
-            "yarn_icon": " <#348cba>\ue6a7</>"
+            "yarn_icon": " <#e3122e>\ue6a7</>"
           },
           "style": "diamond",
           "template": "\ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
@@ -71,7 +71,7 @@
           "type": "node"
         },
         {
-          "background": "#40c4ff",
+          "background": "#9a0001",
           "foreground": "#ffffff",
           "invert_powerline": true,
           "leading_diamond": " \ue0b6",
@@ -88,15 +88,15 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#21c7c7",
+          "foreground": "#e3122e",
           "style": "plain",
           "template": "\u2570\u2500",
           "type": "text"
         },
         {
-          "foreground": "#e0f8ff",
+          "foreground": "#f4dfe1",
           "foreground_templates": [
-            "{{ if gt .Code 0 }}#ef5350{{ end }}"
+            "{{ if gt .Code 0 }}#e3122e{{ end }}"
           ],
           "options": {
             "always_enabled": true

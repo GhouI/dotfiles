@@ -9,12 +9,12 @@
   },
   "display": {
     "separator": "  ",
-    "color": { "keys": "magenta" }
+    "color": { "keys": "red" }
   },
   "modules": [
     "break",
-    { "type": "title", "color": { "user": "magenta", "at": "white", "host": "blue" } },
-    { "type": "separator", "string": "─", "outputColor": "magenta" },
+    { "type": "title", "color": { "user": "red", "at": "white", "host": "light_red" } },
+    { "type": "separator", "string": "─", "outputColor": "red" },
     { "type": "os", "key": "  os" },
     { "type": "kernel", "key": "  kernel" },
     { "type": "wm", "key": "  wm" },

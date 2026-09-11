@@ -1,4 +1,4 @@
-/* Catppuccin Mocha */
+/* Crimson */
 * {
   font-family: "JetBrainsMono Nerd Font", sans-serif;
   font-size: 15px;
@@ -8,13 +8,13 @@
 }
 
 window {
-  background-color: rgba(17, 17, 27, 0.7);
+  background-color: rgba(6, 0, 0, 0.7);
 }
 
 button {
-  color: #cdd6f4;
-  background-color: rgba(30, 30, 46, 0.85);
-  border: 2px solid #313244;
+  color: #f4dfe1;
+  background-color: rgba(13, 4, 5, 0.85);
+  border: 2px solid #1d0a0c;
   border-radius: 20px;
   margin: 12px;
   background-repeat: no-repeat;
@@ -25,9 +25,9 @@ button {
 
 button:focus,
 button:hover {
-  background-color: #313244;
-  border-color: #cba6f7;
-  color: #f5c2e7;
+  background-color: #1d0a0c;
+  border-color: #e3122e;
+  color: #f21956;
   background-size: 26%;
 }
 
@@ -37,8 +37,8 @@ button:hover {
 #reboot   { background-image: image(url("/usr/share/wlogout/icons/reboot.png")); }
 #shutdown { background-image: image(url("/usr/share/wlogout/icons/shutdown.png")); }
 
-#lock:hover     { border-color: #b4befe; }
-#logout:hover   { border-color: #89b4fa; }
-#suspend:hover  { border-color: #94e2d5; }
-#reboot:hover   { border-color: #fab387; }
-#shutdown:hover { border-color: #f38ba8; }
+#lock:hover     { border-color: #ff6b8b; }
+#logout:hover   { border-color: #ff4d6d; }
+#suspend:hover  { border-color: #ffb3c1; }
+#reboot:hover   { border-color: #ff7a45; }
+#shutdown:hover { border-color: #ff2e4d; }

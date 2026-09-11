@@ -18,6 +18,7 @@ LINKS=(
   .config/btop
   .config/cava
   .config/wlogout
+  .config/gtk-4.0
   .claude/settings.json
 )
 
@@ -47,8 +48,8 @@ if command -v oh-my-posh >/dev/null && ! fc-list | grep "JetBrainsMono Nerd Font
 fi
 
 # Catppuccin Mocha GTK theme + cursors
-GTK_THEME=catppuccin-mocha-mauve-standard+default
-CURSORS=catppuccin-mocha-mauve-cursors
+GTK_THEME=catppuccin-mocha-red-standard+default
+CURSORS=catppuccin-mocha-red-cursors
 tmp="$(mktemp -d)"
 if [ ! -d "$HOME/.local/share/themes/$GTK_THEME" ]; then
   curl -fsSL -o "$tmp/gtk.zip" "https://github.com/catppuccin/gtk/releases/download/v1.0.3/$GTK_THEME.zip"
@@ -60,13 +61,10 @@ if [ ! -d "$HOME/.local/share/icons/$CURSORS" ]; then
 fi
 rm -rf "$tmp"
 
-mkdir -p "$HOME/.config/gtk-4.0"
-for f in gtk.css gtk-dark.css assets; do
-  ln -sfn "$HOME/.local/share/themes/$GTK_THEME/gtk-4.0/$f" "$HOME/.config/gtk-4.0/$f"
-done
 gsettings set org.gnome.desktop.interface gtk-theme "$GTK_THEME"
 gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
 gsettings set org.gnome.desktop.interface cursor-theme "$CURSORS"
 gsettings set org.gnome.desktop.interface cursor-size 24
 gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+gsettings set org.gnome.desktop.interface accent-color red
 echo "themed   GTK, icons, cursors"

@@ -1,0 +1,22 @@
+# Crimson — matches ~/Pictures/wallpapers/wallhaven-mlye38.jpg
+background = #0d0405
+foreground = #f4dfe1
+cursor-color = #f21956
+selection-background = #3d161b
+selection-foreground = #f4dfe1
+palette = 0=#1d0a0c
+palette = 1=#e3122e
+palette = 2=#ff8fa3
+palette = 3=#ffb4a2
+palette = 4=#ff4d6d
+palette = 5=#f21956
+palette = 6=#ffb3c1
+palette = 7=#d4a9ae
+palette = 8=#5a2229
+palette = 9=#ff2e4d
+palette = 10=#ffc2cc
+palette = 11=#ff7a45
+palette = 12=#ff6b8b
+palette = 13=#ff5c9a
+palette = 14=#ffe0e5
+palette = 15=#f4dfe1

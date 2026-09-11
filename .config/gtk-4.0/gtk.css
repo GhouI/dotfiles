@@ -1,0 +1,33 @@
+/* Crimson — libadwaita colour overrides for GTK4 apps (Nautilus, Settings, ...) */
+@define-color accent_color #ff2e4d;
+@define-color accent_bg_color #e3122e;
+@define-color accent_fg_color #ffffff;
+
+@define-color destructive_color #ff2e4d;
+@define-color destructive_bg_color #9a0001;
+@define-color destructive_fg_color #ffffff;
+
+@define-color window_bg_color #0d0405;
+@define-color window_fg_color #f4dfe1;
+@define-color view_bg_color #0a0203;
+@define-color view_fg_color #f4dfe1;
+
+@define-color headerbar_bg_color #120607;
+@define-color headerbar_fg_color #f4dfe1;
+@define-color headerbar_backdrop_color #0d0405;
+@define-color headerbar_shade_color rgba(0, 0, 0, 0.5);
+
+@define-color sidebar_bg_color #120607;
+@define-color sidebar_fg_color #f4dfe1;
+@define-color sidebar_backdrop_color #0d0405;
+@define-color secondary_sidebar_bg_color #0d0405;
+@define-color secondary_sidebar_fg_color #f4dfe1;
+
+@define-color card_bg_color #1d0a0c;
+@define-color card_fg_color #f4dfe1;
+@define-color dialog_bg_color #120607;
+@define-color dialog_fg_color #f4dfe1;
+@define-color popover_bg_color #120607;
+@define-color popover_fg_color #f4dfe1;
+@define-color thumbnail_bg_color #1d0a0c;
+@define-color thumbnail_fg_color #f4dfe1;

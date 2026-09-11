@@ -1,22 +1,22 @@
-/* Catppuccin Mocha */
-@define-color base     #1e1e2e;
-@define-color mantle   #181825;
-@define-color crust    #11111b;
-@define-color surface0 #313244;
-@define-color surface1 #45475a;
-@define-color overlay0 #6c7086;
-@define-color text     #cdd6f4;
-@define-color subtext0 #a6adc8;
-@define-color mauve    #cba6f7;
-@define-color pink     #f5c2e7;
-@define-color blue     #89b4fa;
-@define-color sapphire #74c7ec;
-@define-color teal     #94e2d5;
-@define-color green    #a6e3a1;
-@define-color yellow   #f9e2af;
-@define-color peach    #fab387;
-@define-color red      #f38ba8;
-@define-color lavender #b4befe;
+/* Crimson */
+@define-color base     #0d0405;
+@define-color mantle   #0a0203;
+@define-color crust    #060000;
+@define-color surface0 #1d0a0c;
+@define-color surface1 #2b1013;
+@define-color overlay0 #5a2229;
+@define-color text     #f4dfe1;
+@define-color subtext0 #b8868c;
+@define-color mauve    #e3122e;
+@define-color pink     #f21956;
+@define-color blue     #ff4d6d;
+@define-color sapphire #ff5c7a;
+@define-color teal     #ffb3c1;
+@define-color green    #ff8fa3;
+@define-color yellow   #ffb4a2;
+@define-color peach    #ff7a45;
+@define-color red      #ff2e4d;
+@define-color lavender #ff6b8b;
 
 * {
   font-family: "JetBrainsMono Nerd Font", sans-serif;

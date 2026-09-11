@@ -9,15 +9,15 @@ configuration {
   font: "JetBrainsMono Nerd Font Bold 12";
 }
 
-/* Catppuccin Mocha */
+/* Crimson */
 * {
-  base:     #1e1e2ee6;
-  surface0: #313244;
-  surface1: #45475a;
-  text:     #cdd6f4;
-  subtext0: #a6adc8;
-  mauve:    #cba6f7;
-  pink:     #f5c2e7;
+  base:     #0d0405e6;
+  surface0: #1d0a0c;
+  surface1: #2b1013;
+  text:     #f4dfe1;
+  subtext0: #b8868c;
+  mauve:    #e3122e;
+  pink:     #f21956;
 
   background-color: transparent;
   text-color: @text;
@@ -53,8 +53,14 @@ element {
 }
 element-icon { size: 24px; }
 element-text { vertical-align: 0.5; }
-element selected {
+element normal.normal, element alternate.normal,
+element normal.active, element alternate.active,
+element normal.urgent, element alternate.urgent {
+  background-color: transparent;
+  text-color: @text;
+}
+element selected.normal, element selected.active, element selected.urgent {
   background-color: @surface1;
   text-color: @pink;
 }
-element-text selected { text-color: @pink; }
+element-icon, element-text { background-color: transparent; text-color: inherit; }
