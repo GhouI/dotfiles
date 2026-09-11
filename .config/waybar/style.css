@@ -1,0 +1,85 @@
+/* Catppuccin Mocha */
+@define-color base     #1e1e2e;
+@define-color mantle   #181825;
+@define-color crust    #11111b;
+@define-color surface0 #313244;
+@define-color surface1 #45475a;
+@define-color overlay0 #6c7086;
+@define-color text     #cdd6f4;
+@define-color subtext0 #a6adc8;
+@define-color mauve    #cba6f7;
+@define-color pink     #f5c2e7;
+@define-color blue     #89b4fa;
+@define-color sapphire #74c7ec;
+@define-color teal     #94e2d5;
+@define-color green    #a6e3a1;
+@define-color yellow   #f9e2af;
+@define-color peach    #fab387;
+@define-color red      #f38ba8;
+@define-color lavender #b4befe;
+
+* {
+  font-family: "JetBrainsMono Nerd Font", sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  min-height: 0;
+  border: none;
+}
+
+window#waybar {
+  background: transparent;
+  color: @text;
+}
+
+tooltip {
+  background: alpha(@base, 0.95);
+  border: 1px solid @mauve;
+  border-radius: 10px;
+}
+
+/* Each module is a floating pill */
+#custom-launcher,
+#workspaces,
+#window,
+#clock,
+#mpris,
+#cpu,
+#memory,
+#pulseaudio,
+#network,
+#tray,
+#custom-power {
+  background: alpha(@base, 0.75);
+  border: 1px solid alpha(@surface1, 0.6);
+  border-radius: 14px;
+  padding: 4px 14px;
+  margin: 2px 0;
+}
+
+window#waybar.empty #window {
+  background: transparent;
+  border-color: transparent;
+}
+
+#custom-launcher { color: @mauve; font-size: 16px; padding: 4px 16px 4px 12px; }
+
+#workspaces { padding: 2px 6px; }
+#workspaces button {
+  color: @overlay0;
+  padding: 0 6px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+#workspaces button.active { color: @pink; }
+#workspaces button:hover { background: @surface0; color: @lavender; }
+
+#window     { color: @subtext0; }
+#clock      { color: @lavender; }
+#mpris      { color: @green; }
+#cpu        { color: @blue; }
+#memory     { color: @teal; }
+#pulseaudio { color: @peach; }
+#pulseaudio.muted { color: @overlay0; }
+#network    { color: @sapphire; }
+#network.disconnected { color: @red; }
+#custom-power { color: @red; padding: 4px 16px 4px 12px; }

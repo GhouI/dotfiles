@@ -10,6 +10,11 @@ LINKS=(
   .gitconfig
   .config/ghostty
   .config/oh-my-posh
+  .config/hypr
+  .config/waybar
+  .config/rofi
+  .config/mako
+  .config/fastfetch
   .claude/settings.json
 )
 

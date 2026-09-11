@@ -1,0 +1,95 @@
+{
+  "layer": "top",
+  "position": "top",
+  "margin-top": 8,
+  "margin-left": 14,
+  "margin-right": 14,
+  "spacing": 6,
+
+  "modules-left": ["custom/launcher", "hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["clock"],
+  "modules-right": ["mpris", "cpu", "memory", "pulseaudio", "network", "tray", "custom/power"],
+
+  "custom/launcher": {
+    "format": "",
+    "on-click": "rofi -show drun",
+    "tooltip": false
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "active": "",
+      "default": "",
+      "empty": ""
+    },
+    "persistent-workspaces": { "*": 5 },
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1"
+  },
+
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 40,
+    "separate-outputs": true
+  },
+
+  "clock": {
+    "format": "  {:%H:%M}",
+    "format-alt": "  {:%a %d %b}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "format": {
+        "months": "<span color='#cba6f7'><b>{}</b></span>",
+        "today": "<span color='#f5c2e7'><b><u>{}</u></b></span>",
+        "weekdays": "<span color='#89b4fa'><b>{}</b></span>"
+      }
+    }
+  },
+
+  "mpris": {
+    "format": "{status_icon} {title}",
+    "status-icons": { "playing": "", "paused": "" },
+    "max-length": 30
+  },
+
+  "cpu": {
+    "format": "  {usage}%",
+    "interval": 3,
+    "on-click": "ghostty -e btop"
+  },
+
+  "memory": {
+    "format": "󰍛  {percentage}%",
+    "interval": 5,
+    "tooltip-format": "{used:0.1f} / {total:0.1f} GiB"
+  },
+
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "󰝟  muted",
+    "format-icons": { "default": ["", "", ""] },
+    "on-click": "pavucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+  },
+
+  "network": {
+    "format-wifi": "  {signalStrength}%",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰖪",
+    "tooltip-format": "{ifname}  {ipaddr}",
+    "on-click": "nm-connection-editor"
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "on-click": "wlogout",
+    "tooltip": false
+  }
+}

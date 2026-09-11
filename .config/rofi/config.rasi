@@ -1,0 +1,60 @@
+configuration {
+  modi: "drun,run,window";
+  show-icons: true;
+  icon-theme: "Papirus-Dark";
+  display-drun: "  apps";
+  display-run: "  run";
+  display-window: "  windows";
+  drun-display-format: "{name}";
+  font: "JetBrainsMono Nerd Font Bold 12";
+}
+
+/* Catppuccin Mocha */
+* {
+  base:     #1e1e2ee6;
+  surface0: #313244;
+  surface1: #45475a;
+  text:     #cdd6f4;
+  subtext0: #a6adc8;
+  mauve:    #cba6f7;
+  pink:     #f5c2e7;
+
+  background-color: transparent;
+  text-color: @text;
+}
+
+window {
+  width: 560px;
+  background-color: @base;
+  border: 2px solid;
+  border-color: @mauve;
+  border-radius: 16px;
+  padding: 18px;
+}
+
+mainbox { spacing: 14px; children: [ inputbar, listview ]; }
+
+inputbar {
+  background-color: @surface0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  spacing: 10px;
+  children: [ prompt, entry ];
+}
+prompt { text-color: @mauve; }
+entry  { placeholder: "search..."; placeholder-color: @subtext0; }
+
+listview { lines: 8; columns: 1; spacing: 4px; scrollbar: false; }
+
+element {
+  padding: 8px 12px;
+  border-radius: 10px;
+  spacing: 12px;
+}
+element-icon { size: 24px; }
+element-text { vertical-align: 0.5; }
+element selected {
+  background-color: @surface1;
+  text-color: @pink;
+}
+element-text selected { text-color: @pink; }

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  // Drop an anime image at ~/.config/fastfetch/logo.png to show it instead of the distro logo
+  "logo": {
+    "type": "auto",
+    "source": "~/.config/fastfetch/logo.png",
+    "width": 32,
+    "padding": { "top": 1, "right": 3 }
+  },
+  "display": {
+    "separator": "  ",
+    "color": { "keys": "magenta" }
+  },
+  "modules": [
+    "break",
+    { "type": "title", "color": { "user": "magenta", "at": "white", "host": "blue" } },
+    { "type": "separator", "string": "─", "outputColor": "magenta" },
+    { "type": "os", "key": "  os" },
+    { "type": "kernel", "key": "  kernel" },
+    { "type": "wm", "key": "  wm" },
+    { "type": "shell", "key": "  shell" },
+    { "type": "terminal", "key": "  term" },
+    { "type": "cpu", "key": "  cpu" },
+    { "type": "gpu", "key": "󰢮  gpu" },
+    { "type": "memory", "key": "󰍛  mem" },
+    { "type": "uptime", "key": "  uptime" },
+    "break",
+    { "type": "colors", "symbol": "circle" }
+  ]
+}
