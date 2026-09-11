@@ -89,7 +89,7 @@
 
   "custom/power": {
     "format": "⏻",
-    "on-click": "wlogout",
+    "on-click": "wlogout -b 5 -T 350 -B 350",
     "tooltip": false
   }
 }

@@ -24,7 +24,7 @@ Secrets and machine state stay out of the repo: `~/.claude/.credentials.json`, `
 
 ## Hyprland rice (Catppuccin Mocha)
 
-Configs: `.config/hypr`, `waybar`, `rofi`, `mako`, `fastfetch`. **Not yet tested on a live Hyprland session.**
+Configs: `.config/hypr`, `waybar`, `rofi`, `mako`, `fastfetch`. Tested on Hyprland 0.53 (Ubuntu 26.04).
 
 ### Finish setting it up
 
@@ -54,8 +54,9 @@ Configs: `.config/hypr`, `waybar`, `rofi`, `mako`, `fastfetch`. **Not yet tested
 | Print / Shift+Print | Screenshot region / full |
 | Super + Shift + E | Power menu |
 | Super + Shift + R | Restart the bar |
+| Super + W | Random wallpaper from ~/Pictures/wallpapers |
 
 ### Make it anime
 
-- Wallpaper: replace `~/Pictures/wallpapers/wallpaper.png` (wallhaven.cc → filter Anime, 2560×1440).
+- Wallpapers: drop images in `~/Pictures/wallpapers`, then Super+W (or `~/.config/hypr/scripts/wallpaper.sh <file>`). Find them on wallhaven.cc → filter Anime, 2560×1440.
 - fastfetch: put a transparent PNG at `~/.config/fastfetch/logo.png`.
