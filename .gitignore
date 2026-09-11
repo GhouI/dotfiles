@@ -1,0 +1,4 @@
+# Never commit secrets or Claude session state
+.claude/*
+!.claude/settings.json
+*.bak
