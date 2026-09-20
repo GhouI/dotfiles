@@ -1,0 +1,22 @@
+# Sunset gold — matches ~/Pictures/wallpapers/paris-sunset-wallpaperhub.jpg
+background = #17110c
+foreground = #f7e8d5
+cursor-color = #fecb69
+selection-background = #3a2d22
+selection-foreground = #f7e8d5
+palette = 0=#2a211b
+palette = 1=#eea068
+palette = 2=#e2a88c
+palette = 3=#fdd69f
+palette = 4=#dd7f3f
+palette = 5=#fecb69
+palette = 6=#fdd69f
+palette = 7=#c9a184
+palette = 8=#6c5252
+palette = 9=#e07b39
+palette = 10=#fdd69f
+palette = 11=#ef9a5a
+palette = 12=#f2b880
+palette = 13=#e8935a
+palette = 14=#f2ded2
+palette = 15=#f7e8d5

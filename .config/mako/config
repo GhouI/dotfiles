@@ -1,9 +1,9 @@
-# Crimson
+# Sunset gold
 font=JetBrainsMono Nerd Font 11
-background-color=#0d0405e6
-text-color=#f4dfe1
-border-color=#e3122e
-progress-color=over #1d0a0c
+background-color=#17110ce6
+text-color=#f7e8d5
+border-color=#eea068
+progress-color=over #2a211b
 border-size=2
 border-radius=12
 padding=12
@@ -14,5 +14,5 @@ icons=1
 max-icon-size=48
 
 [urgency=high]
-border-color=#ff7a45
+border-color=#ef9a5a
 default-timeout=0

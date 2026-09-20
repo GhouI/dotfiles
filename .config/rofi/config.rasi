@@ -9,15 +9,15 @@ configuration {
   font: "JetBrainsMono Nerd Font Bold 12";
 }
 
-/* Crimson */
+/* Sunset gold */
 * {
-  base:     #0d0405e6;
-  surface0: #1d0a0c;
-  surface1: #2b1013;
-  text:     #f4dfe1;
-  subtext0: #b8868c;
-  mauve:    #e3122e;
-  pink:     #f21956;
+  base:     #17110ce6;
+  surface0: #2a211b;
+  surface1: #3a2d22;
+  text:     #f7e8d5;
+  subtext0: #c9a184;
+  mauve:    #eea068;
+  pink:     #fecb69;
 
   background-color: transparent;
   text-color: @text;

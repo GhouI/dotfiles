@@ -41,9 +41,9 @@
     "calendar": {
       "mode": "month",
       "format": {
-        "months": "<span color='#e3122e'><b>{}</b></span>",
-        "today": "<span color='#f21956'><b><u>{}</u></b></span>",
-        "weekdays": "<span color='#ff4d6d'><b>{}</b></span>"
+        "months": "<span color='#eea068'><b>{}</b></span>",
+        "today": "<span color='#fecb69'><b><u>{}</u></b></span>",
+        "weekdays": "<span color='#dd7f3f'><b>{}</b></span>"
       }
     }
   },

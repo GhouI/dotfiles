@@ -1,22 +1,22 @@
-/* Crimson */
-@define-color base     #0d0405;
-@define-color mantle   #0a0203;
-@define-color crust    #060000;
-@define-color surface0 #1d0a0c;
-@define-color surface1 #2b1013;
-@define-color overlay0 #5a2229;
-@define-color text     #f4dfe1;
-@define-color subtext0 #b8868c;
-@define-color mauve    #e3122e;
-@define-color pink     #f21956;
-@define-color blue     #ff4d6d;
-@define-color sapphire #ff5c7a;
-@define-color teal     #ffb3c1;
-@define-color green    #ff8fa3;
-@define-color yellow   #ffb4a2;
-@define-color peach    #ff7a45;
-@define-color red      #ff2e4d;
-@define-color lavender #ff6b8b;
+/* Sunset gold */
+@define-color base     #17110c;
+@define-color mantle   #120d09;
+@define-color crust    #0c0805;
+@define-color surface0 #2a211b;
+@define-color surface1 #3a2d22;
+@define-color overlay0 #6c5252;
+@define-color text     #f7e8d5;
+@define-color subtext0 #c9a184;
+@define-color mauve    #eea068;
+@define-color pink     #fecb69;
+@define-color blue     #dd7f3f;
+@define-color sapphire #e8935a;
+@define-color teal     #fdd69f;
+@define-color green    #e2a88c;
+@define-color yellow   #fdd69f;
+@define-color peach    #ef9a5a;
+@define-color red      #e07b39;
+@define-color lavender #f2b880;
 
 * {
   font-family: "JetBrainsMono Nerd Font", sans-serif;
