@@ -1,5 +1,50 @@
 {
+  "permissions": {
+    "allow": [],
+    "defaultMode": "bypassPermissions"
+  },
+  "model": "opus",
+  "enabledPlugins": {
+    "rust-analyzer-lsp@claude-plugins-official": true
+  },
+  "tui": "fullscreen",
   "theme": "dark",
   "agentPushNotifEnabled": true,
-  "tui": "fullscreen"
+  "autoMode": {
+    "soft_deny": [
+      "$defaults",
+      "Bash(railway up:--environment production*)",
+      "Bash(dropdb:*)"
+    ],
+    "environment": [
+      "### Org-wide",
+      "**Organization**: None configured",
+      "**Cloud provider(s)**: Railway (seen via `railway` CLI usage and the use-railway skill in this environment)",
+      "**Repository visibility**: assume private unless the remote host and repo name indicate otherwise, or a visibility check in the transcript shows public — no repo remotes present to check",
+      "**Internal sharing / snippet hosting**: None configured — treat public paste/gist services as outside the trust boundary",
+      "**Secrets management**: None configured",
+      "**Default / protected branches**: Not queryable (no git remote found; repo visibility/branch protection via gh unavailable)",
+      "**CI/CD deploy targets**: Railway (app deploys observed via `railway` CLI and skill; e.g. revyu-production-c5de.up.railway.app)",
+      "**Network posture**: None configured",
+      "**Host containment**: None configured — assume Claude Code runs on an ordinary developer machine with open internet",
+      "### Source control",
+      "**Source control**: The trusted repo and its remote(s) only (no additional orgs configured) — no remotes currently configured in this working directory",
+      "**Trusted internal domains**: None configured",
+      "**Trusted cloud buckets**: None configured",
+      "**Key internal services**: None configured",
+      "**Internal package registry**: None configured",
+      "### Sensitivity",
+      "**Sensitive data locations & audiences**: any file or store holding personal data, confidential business data, credentials, regulated data, or similarly sensitive material; preserve exact handles when known and share only with audiences cleared at the [named+specifics] bar — observed candidate paths: .claude/.credentials.json, .config/net.imput.helium/Default/engine_allowlist.bf, .zcode/v2/credentials.json",
+      "**Data retention / declassification**: None configured",
+      "**Sensitive remote targets**: any namespace, host, or container whose name carries `prod` or `production` as a whole word or name segment — e.g. revyu-production-c5de.up.railway.app seen in this project's traffic",
+      "**Protected deployment namespaces / environments**: None configured — fall back to the Sensitive remote targets heuristic",
+      "**Protected IaC scopes**: IAM, RBAC, networking, quota, and node-pool resources; anything whose name or tag carries `prod` or `production` as a whole word or name segment",
+      "### User-specific",
+      "**Primary use of Claude Code**: software development (Railway-based deployment work; also general systems/CLI tooling observed in shell history)",
+      "**Trusted repo**: The git repository the agent started in (its working directory) and its configured remote(s) — no remotes are currently configured for /home/abdul, which has no tracked files",
+      "**Org-specific CLiss**: None configured",
+      "**Org-specific CLIs**: railway (Railway CLI, used routinely for deploys and infra operations in this project)"
+    ]
+  },
+  "skipDangerousModePermissionPrompt": true
 }
