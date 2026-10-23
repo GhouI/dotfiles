@@ -119,3 +119,11 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Oh My Posh prompt
 eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/takuya.omp.json)"
+
+# opencode
+export PATH=/home/abdul/.opencode/bin:$PATH
+. "$HOME/.cargo/env"
+
+# >>> railway initialize >>>
+source "$HOME/.railway/env"
+# <<< railway initialize <<<

@@ -8,7 +8,15 @@
 
   "modules-left": ["custom/launcher", "hyprland/workspaces", "hyprland/window"],
   "modules-center": ["clock"],
-  "modules-right": ["mpris", "cpu", "memory", "pulseaudio", "network", "tray", "custom/power"],
+  "modules-right": ["mpris", "cpu", "memory", "pulseaudio", "custom/headset", "network", "tray", "custom/power"],
+
+  "custom/headset": {
+    "exec": "~/.config/waybar/scripts/tb-battery --waybar",
+    "return-type": "json",
+    "interval": 60,
+    "on-click": "pkill -RTMIN+8 waybar",
+    "signal": 8
+  },
 
   "custom/launcher": {
     "format": "",

@@ -1,0 +1,109 @@
+#!/usr/bin/env python3
+"""Turtle Beach Stealth 500P battery reader (Linux hidraw).
+
+Vendor collection 0xFF13: requests go out as output report 0x06; replies must be
+pulled with GET_REPORT (HIDIOCGINPUT) on input report 0x07, framed `07 <len> <flag> ...`.
+
+Two dialects, depending on which device answers:
+- the headset on its USB cable: JSON records; "GSI" key 240 = battery %, 250 = charging.
+- the wireless dongle: Airoha binary frames (as on the Audeze Maxwell); asking for
+  attribute 0x0CD6 is answered with `05 5d 05 00 d6 0c 00 00 <percent>`. No charging flag.
+"""
+import fcntl, json, os, re, sys, time
+
+ASK_SINF = bytes.fromhex("061800055a140002994801c04a0100000000000000610053496e660000000000").ljust(62, bytes(1))
+ASK_GSI = bytes.fromhex("061800055a140002994801441101000000000000006100534753490000000000").ljust(62, bytes(1))
+ASK_BATTERY = bytes.fromhex("060780055a0300d60c").ljust(62, bytes(1))
+BATTERY_MARKER = b"\x05\x5d\x05\x00\xd6\x0c\x00\x00"
+HIDIOCGINPUT = (3 << 30) | (64 << 16) | (ord('H') << 8) | 0x0A
+
+def nodes():
+    found = []
+    for h in sorted(os.listdir('/sys/class/hidraw')):
+        ue = open(f'/sys/class/hidraw/{h}/device/uevent').read()
+        if '000010F5' in ue:
+            found.append((f'/dev/{h}', re.search(r'HID_NAME=(.*)', ue).group(1)))
+    # The headset's own cable link first: it also reports charging.
+    return sorted(found, key=lambda n: 'headset' not in n[1])
+
+def exchange(fd, asks, reads):
+    """Send each ask, then pull input report 7; only each reply's fresh bytes are kept."""
+    blob = bytearray()
+    for ask in asks:
+        os.write(fd, ask)
+        for _ in range(reads):
+            time.sleep(0.03)
+            buf = bytearray(64); buf[0] = 7
+            n = fcntl.ioctl(fd, HIDIOCGINPUT, buf, True)
+            if n > 3 and buf[0] == 7:
+                blob += buf[3:3 + min(buf[1], n - 3)]
+    return bytes(blob)
+
+def read_status(path):
+    fd = os.open(path, os.O_RDWR)
+    try:
+        blob = exchange(fd, (ASK_SINF, ASK_GSI), 20)
+        status = {}
+        for m in re.finditer(rb'\{"(?:OR|UP)":"GSI","KVP":\{[^{}]*\}\}', blob):
+            status.update(json.loads(m.group())["KVP"])
+        if '240' in status:
+            return status
+        blob = exchange(fd, (ASK_BATTERY,), 6)
+        i = blob.rfind(BATTERY_MARKER)
+        if i >= 0 and i + len(BATTERY_MARKER) < len(blob):
+            pct = blob[i + len(BATTERY_MARKER)]
+            if pct <= 100:
+                return {'240': str(pct)}
+        return {}
+    finally:
+        os.close(fd)
+
+waybar = '--waybar' in sys.argv
+found = None
+for path, name in nodes():
+    try:
+        s = read_status(path)
+    except OSError as e:
+        print(f'{name} ({path}): {e}', file=sys.stderr); continue
+    if '240' in s:
+        found = (s, name)
+        break
+
+if waybar:
+    # A missed read (e.g. while switching between cable and wireless) keeps the last
+    # level, dimmed, for a few minutes; after that the module hides itself.
+    cache = os.path.join(os.environ.get('XDG_RUNTIME_DIR', '/tmp'), 'tb-battery.json')
+    if not found:
+        try:
+            with open(cache) as f:
+                last = json.load(f)
+            if time.time() - last['time'] < 300:
+                last['out'].update(tooltip=last['out']['tooltip'] + ' (last reading)', **{'class': 'stale'})
+                print(json.dumps(last['out']))
+                sys.exit(0)
+        except (OSError, ValueError, KeyError):
+            pass
+        print(json.dumps({"text": "", "tooltip": ""}))
+        sys.exit(0)
+    s, name = found
+    pct, charging = int(s['240']), s.get('250') == '1'
+    cls = 'charging' if charging else 'critical' if pct <= 15 else 'warning' if pct <= 30 else 'normal'
+    out = {
+        "text": f"󰋋  {'󱐋' if charging else ''}{pct}%",
+        "tooltip": f"{s.get('220', name)}: {pct}%{' (charging)' if charging else ''}",
+        "class": cls,
+        "percentage": pct,
+    }
+    try:
+        with open(cache, 'w') as f:
+            json.dump({'time': time.time(), 'out': out}, f)
+    except OSError:
+        pass
+    print(json.dumps(out))
+    sys.exit(0)
+
+if found:
+    s, name = found
+    chg = {'1': ', charging'}.get(s.get('250'), '')
+    print(f'{s.get("220", name)}: {s["240"]}%{chg}  [{name}]')
+sys.exit(0 if found else 1)

@@ -8,7 +8,9 @@
     "rust-analyzer-lsp@claude-plugins-official": true
   },
   "tui": "fullscreen",
+  "skipDangerousModePermissionPrompt": true,
   "theme": "dark",
+  "switchModelsOnFlag": false,
   "agentPushNotifEnabled": true,
   "autoMode": {
     "soft_deny": [
@@ -45,6 +47,5 @@
       "**Org-specific CLiss**: None configured",
       "**Org-specific CLIs**: railway (Railway CLI, used routinely for deploys and infra operations in this project)"
     ]
-  },
-  "skipDangerousModePermissionPrompt": true
+  }
 }

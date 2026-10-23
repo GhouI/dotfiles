@@ -46,6 +46,7 @@ tooltip {
 #cpu,
 #memory,
 #pulseaudio,
+#custom-headset,
 #network,
 #tray,
 #custom-power {
@@ -80,6 +81,11 @@ window#waybar.empty #window {
 #memory     { color: @teal; }
 #pulseaudio { color: @peach; }
 #pulseaudio.muted { color: @overlay0; }
+#custom-headset { color: @lavender; }
+#custom-headset.charging { color: @pink; }
+#custom-headset.warning  { color: @peach; }
+#custom-headset.critical { color: @red; }
+#custom-headset.stale    { color: @overlay0; }
 #network    { color: @sapphire; }
 #network.disconnected { color: @red; }
 #custom-power { color: @red; padding: 4px 16px 4px 12px; }
