@@ -1,0 +1,6 @@
+{
+  "uuid": "headset-battery@ghoui",
+  "name": "Headset Battery",
+  "description": "Shows the Turtle Beach Stealth 500P battery level in the top bar (via tb-battery).",
+  "shell-version": ["50"]
+}
